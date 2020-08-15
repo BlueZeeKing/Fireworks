@@ -1,28 +1,29 @@
-var width = window.innerWidth;
-var height = window.innerHeight;
+var width = window.innerWidth; // create a height variable
+var height = window.innerHeight; // create a width variable
+var audio = new Audio('fireworkSound.mp3') // load the firework sound
 
-function radians(x) {
+function radians(x) { // change x degrees to radians
     return x * (Math.PI / 180);
 }
 
-function degrees(x) {
+function degrees(x) { // change x radians to degrees
     return x * (180 / Math.PI);
 }
 
-function random(min, max) {
+function random(min, max) { // return a random number
     return Math.floor((Math.random() * (max - min)) + min + 1);
 }
 
-function randomColor(colors) {
+function randomColor(colors) { // returns a random color from the array colors
     return colors[Math.floor((Math.random() * colors.length))];
 }
 
-function round(num, places) {
+function round(num, places) { // round a number to a specific number of places
     var multiplier = Math.pow(10, places);
     return Math.round(num * multiplier) / multiplier;
 }
 
-function clear(bgColor, ctx, clearRate) {
+function clear(bgColor, ctx, clearRate) { // clear the screen
     ctx.beginPath();
     ctx.fillStyle = bgColor;
     ctx.globalAlpha = clearRate;
@@ -30,13 +31,7 @@ function clear(bgColor, ctx, clearRate) {
     ctx.globalAlpha = 1;
 }
 
-function logOnce(line, msg, i) {
-    if (i == 0) {
-        console.log(line.toString() + ': ' + msg.toString())
-    }
-}
-
-function airResistance(drag, vX, vY, i) {
+function airResistance(drag, vX, vY) { // return a new velocity based on the current velocity and air resistance
     let oldVelocity = Math.sqrt(Math.pow(vX, 2) + Math.pow(vY, 2))
     let newVelocity = oldVelocity * 1
     if (oldVelocity > 0) {
@@ -54,14 +49,14 @@ function airResistance(drag, vX, vY, i) {
     return [newX, newY]
 }
 
-function fireworkSound() {
-    let audio = new Audio('fireworkSound.mp3')
-    audio.play()
+function fireworkSound() { // play the firework sound
+    audio.cloneNode(true).play()
 }
 
-function shake(dom) {
+function shake(dom) { // shake the screen
     dom.classList.add("shake");
 }
-function stopShake(dom) {
+
+function stopShake(dom) { // stop shaking the screen
     dom.classList.remove("shake");
 }
