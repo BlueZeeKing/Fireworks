@@ -56,6 +56,9 @@ class Fireworks {
     }
 
     update() { // create a function that updates all particles
+        // a regular particle array looks like [x, y, vx, vy, color, opacity, age]
+        // a launch particle array looks like [x, y, vx, vy, targetX, targetY]
+
         clear(this.bgColor, this.canvas, this.clearRate) // clear the screen a little bit
 
         if (this.particles.length == 0) { // if there are no particles remove the shake animation
