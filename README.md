@@ -1,5 +1,5 @@
 # Fireworks
-A simple JS library that creates fireworks. The fireworks.js file defines the class that can be used to create fireworks and the utilites.js file defines functions that are used by the class. The fireworks.min.js file can be used as a replacement for both. When a firework explodes the whole canvas element shakes and if you want to make sure that the background is not shown  run `document.body.style.backgroundImage = "url('" + canvasObj.toDataURL("image/png") + "')";` which will set the background of the page to the background of the canvas.
+A simple JS library that creates fireworks. The fireworks.js file defines the class that can be used to create fireworks. When a firework explodes the whole canvas element shakes and if you want to make sure that the background is not shown  run `document.body.style.backgroundImage = "url('" + canvasObj.toDataURL("image/png") + "')";` which will set the background of the page to the background of the canvas.
 ## The Fireworks class
 The fireworks class takes a canvas DOM as a input but you can also input the background color, the color of the firework (can be an array of colors and will be randomly chosen), and the color of the starting particle.
 #### Example:
