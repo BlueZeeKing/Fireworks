@@ -32,5 +32,5 @@ function update () { // update each particle
 }
 requestAnimationFrame(update);
 
-launch(0,0,100,100); // launch a particle
+fireworks.launch(0,0,100,100); // launch a particle
 ```
